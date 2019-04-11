@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+ <!-- 代表欢迎页面 -->
+  <welcome-file-list>
+    <welcome-file>loginStruts.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!--session统一配置的失效时间 ，单位是分钟-->
+  <session-config>
+  	<session-timeout>15</session-timeout> 
+  </session-config>
+   <!-- ServletContext 配置格式 -->
+   <context-param>
+		<param-name>testContextParam1</param-name>
+		<param-value>testContextValue1</param-value>	
+   </context-param>
+   <context-param>
+		<param-name>testContextParam2</param-name>
+		<param-value>testContextValue2</param-value>	
+   </context-param>
+  <!-- sevlet 配置格式 -->
+   <servlet>
+		<description>LoginServlet注册</description>
+		<servlet-name>loginServlet</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.LoginServlet</servlet-class>		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<description>ActionServlet 所有servlet请求入口，匹配所有.do请求，在系统启动时就初始化</description>
+		<servlet-name>ActionServlet</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.framework.struts.servlet.ActionServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ActionServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>		 
+	</servlet-mapping>	
+    
+	<!-- 用户增删改查servelt 配置 -->
+	<servlet>
+		<servlet-name>userAction</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.UserAction</servlet-class>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>userAction</servlet-name>
+		<url-pattern>/pages/user/userAction</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 部门增删改查servelt 配置 -->
+	<servlet>
+		<servlet-name>deptAction</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.DeptAction</servlet-class>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>deptAction</servlet-name>
+		<url-pattern>/pages/dept/deptAction</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 部门增删改查servelt 配置 -->
+	<servlet>
+		<servlet-name>roleAction</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.RoleAction</servlet-class>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>roleAction</servlet-name>
+		<url-pattern>/pages/role/roleAction</url-pattern>
+	</servlet-mapping>
+	
+	
+    <!-- sevlet 配置格式 -->
+	<servlet>
+		<servlet-name>testServlet</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.TestServlet</servlet-class>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>testServlet</servlet-name>
+		<url-pattern>/pages/test</url-pattern>
+	</servlet-mapping>
+	
+	<!-- sevlet 配置格式 -->
+	<servlet>
+		<servlet-name>testServletContext</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.TestServletContext</servlet-class>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>testServletContext</servlet-name>
+		<url-pattern>/pages/testContext</url-pattern>
+	</servlet-mapping>	
+ 	<servlet>
+ 		<description>上下文知识点 设置load-on-starup代表这个servlet在系统启动时就会被初始化</description>
+		<servlet-name>initServlet</servlet-name>
+		<!-- 如何验证类是否引用正常呢:按CTRL+鼠标滑动 -->
+		<servlet-class>com.tz.jspstudy.sysmanage.servlet.InitServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+    
+	<!-- 处理请求编码的拦截器 -->
+	<filter>
+		<!-- 过滤器的标识名 -->
+		<filter-name>characterEncodingFilter</filter-name>
+		<!-- 过滤器对应的实现类 -->
+		<filter-class>com.tz.jspstudy.sysmanage.filter.CharacterEncodingFilter</filter-class>
+		<!-- 配置初始化参数 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<!-- 过滤器的标识名 -->
+		<filter-name>characterEncodingFilter</filter-name>
+		<!-- 过滤器的URL匹配模式 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>  
+	
+	
+	<!-- session登陆验证的拦截器 -->
+	<!--
+	<filter>
+		过滤器的标识名
+		<filter-name>lgoinFilter</filter-name>
+		过滤器对应的实现类
+		<filter-class>com.tz.jspstudy.sysmanage.filter.LoginFilter</filter-class>		 
+	</filter>
+	<filter-mapping>
+		过滤器的标识名
+		<filter-name>lgoinFilter</filter-name>
+		过滤器的URL匹配模式
+		<url-pattern>/pages/*</url-pattern>
+	</filter-mapping>   -->
+		
+	<listener>
+		<description>session监听器，监听用户退出系统</description>
+		<listener-class>com.tz.jspstudy.sysmanage.listener.SessionListener</listener-class>
+	</listener>
+	
+	<listener>
+		<description>上下文监听器，初始化系统</description>
+		<listener-class>com.tz.jspstudy.sysmanage.listener.InitListener</listener-class>
+	</listener>
+</web-app>

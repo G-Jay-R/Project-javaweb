@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+  	<welcome-file>login.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+ 
+ 
+	<context-param>
+		<param-name>testContextParam1</param-name>
+		<param-value>testContextValue1</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>testContextParam2</param-name>
+		<param-value>testContextValue2</param-value>
+	</context-param>
+  
+  <!--servlet注册-->
+
+  <servlet>
+  	<servlet-name>initServlet</servlet-name>
+  	<servlet-class>com.gjr.servletstudy.sysmanage.servlet.InitServlet</servlet-class>
+  	<load-on-startup>0</load-on-startup>
+  </servlet>
+    
+     
+  <servlet>
+  	<description>用于验证登陆的servlet</description>
+  	<servlet-name>loginservlet</servlet-name>
+  	<servlet-class>com.gjr.servletstudy.sysmanage.servlet.LoginServlet</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+  	<servlet-name>loginservlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<description>用于servletcontext学习的servlet</description>
+  	<servlet-name>testServletcontext</servlet-name>
+  	<servlet-class>com.gjr.servletstudy.sysmanage.servlet.TestServletContext</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+  	<servlet-name>testServletcontext</servlet-name>
+  	<url-pattern>/testContext</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<description>用于测试登陆人数的servlet</description>
+  	<servlet-name>testServlet</servlet-name>
+  	<servlet-class>com.gjr.servletstudy.sysmanage.servlet.TestServlet</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+  	<servlet-name>testServlet</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- 处理请求编码的过滤器--> 
+  <filter>
+  	<filter-name>characterencodingfilter</filter-name>
+  	<filter-class>com.gjr.servletstudy.sysmanage.filter.CharacterEncodingFilter</filter-class>
+  <!-- 配置初始化参数 -->
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+    
+  <filter-mapping>
+  	<filter-name>characterencodingfilter</filter-name>
+  	<!-- 如果是/*，则对此路径下的所有servlet起作用，如果是/servlet，则只对此servlet起作用 -->
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+</web-app>

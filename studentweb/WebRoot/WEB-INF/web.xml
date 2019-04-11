@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+<servlet>
+    <servlet-name>InsertServlet</servlet-name>
+    <servlet-class>servlet.InsertServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SelectServlet</servlet-name>
+    <servlet-class>servlet.SelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AmendServlet</servlet-name>
+    <servlet-class>servlet.AmendServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>servlet.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserJcServlet</servlet-name>
+    <servlet-class>servlet.UserJcServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManLoginServlet</servlet-name>
+    <servlet-class>servlet.ManLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManJcServlet</servlet-name>
+    <servlet-class>servlet.ManJcServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserWorksql</servlet-name>
+    <servlet-class>sqlbean.Usersql</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManWorksql</servlet-name>
+    <servlet-class>sqlbean.ManWorksql</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManSelectServlet</servlet-name>
+    <servlet-class>servlet.ManSelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManPerishServlet</servlet-name>
+    <servlet-class>servlet.ManPerishServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserPerishServlet</servlet-name>
+    <servlet-class>servlet.UserPerishServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserDeleteManServlet</servlet-name>
+    <servlet-class>servlet.UserDeleteManServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SSuser</servlet-name>
+    <servlet-class>servlet.SSuser</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>InsertServlet</servlet-name>
+    <url-pattern>/InsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectServlet</servlet-name>
+    <url-pattern>/SelectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AmendServlet</servlet-name>
+    <url-pattern>/AmendServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/UserLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserJcServlet</servlet-name>
+    <url-pattern>/UserJcServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManLoginServlet</servlet-name>
+    <url-pattern>/ManLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManJcServlet</servlet-name>
+    <url-pattern>/ManJcServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserWorksql</servlet-name>
+    <url-pattern>/Usersql</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManWorksql</servlet-name>
+    <url-pattern>/ManWorksql</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManSelectServlet</servlet-name>
+    <url-pattern>/ManSelectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManPerishServlet</servlet-name>
+    <url-pattern>/ManPerishServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserPerishServlet</servlet-name>
+    <url-pattern>/UserPerishServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserDeleteManServlet</servlet-name>
+    <url-pattern>/UserDeleteManServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SSuser</servlet-name>
+    <url-pattern>/SSuser</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

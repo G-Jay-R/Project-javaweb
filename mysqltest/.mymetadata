@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="mysqltest"
+  id="myeclipse.1548943476274"
+  context-root="/mtest"
+  j2ee-spec="6.0"
+  archive="mysqltest.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
