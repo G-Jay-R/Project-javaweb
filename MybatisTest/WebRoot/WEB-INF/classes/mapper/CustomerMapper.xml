@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 -->
+<mapper namespace="com.gjr.dao.CustomerMapper">
+	<!-- 添加客户  id为方法名，parameterType即要返回的类型全称-->
+	<insert id="saveCustomer" parameterType="com.gjr.domain.Customer">
+	INSERT INTO ssmtest.t_customer 
+			(
+			NAME, 
+			gender, 
+			telephone, 
+			address
+			)
+			VALUES
+			( 
+			#{name}, 
+			#{gender}, 
+			#{telephone}, 
+			#{address}
+			)
+	
+	</insert>
+</mapper>
